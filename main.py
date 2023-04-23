@@ -84,11 +84,13 @@ def main() -> int:
         # Execute the appropriate task
         if args.task == "all":
             for task_function in task_mapping.values():
+                print(f"Executing {task_function.__name__}...")
                 try:
                     task_function(args)
                 except Exception as e:
                     raise e
         elif args.task:
+            print(f"Executing {task_mapping[args.task].__name__}...")
             return task_mapping[args.task](args)
 
         return 0

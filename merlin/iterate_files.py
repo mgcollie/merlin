@@ -22,17 +22,18 @@ def iterate_files(filenames: List[str], function: str, args: List,
     """
     for filename in filenames:
         try:
-            code = open(filename).read()
+            print(f"Processing {filename}...")
+            code = open(filename, 'rb').read().decode('utf-8')
             nargs = [code, args]
 
-            modified = call_ai_function(function, nargs, description)
+            modified = call_ai_function(function, nargs, description).encode('utf-8')
 
             # Conditionally append the filename with _tests.py if is_test is True
             name, extension = os.path.splitext(filename)
             output_filename = f"{name}_tests{extension}" if is_test else filename
 
             if not dry_run:
-                with open(output_filename, 'w') as f:
+                with open(output_filename, 'wb') as f:
                     f.write(modified)
             else:
                 logging.info(modified)
