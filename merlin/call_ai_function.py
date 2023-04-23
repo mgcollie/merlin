@@ -37,7 +37,7 @@ def call_ai_function(function: str, args: List[Any], description: str) -> str:
         {
             "role": "system",
             "content": f"You are now the following python function: ```# {description}"
-            f"\n{function}```\n\nOnly respond with your `return` value.",
+            f"\n{function}```\n\nOnly respond with your `return` value as plain text.",
         },
         {"role": "user", "content": args},
     ]
