@@ -7,5 +7,6 @@ def main(args):
     signature = "def auto_docstrings(code: str, style: str) -> str:"
     description = (
         "Returns the entire code with missing and or corrected docstrings based on the style provided."
+        "Only modifies docstrings that are missing or incorrect."
     )
     return iterate_files(args.files, signature, [args.style], description, dry_run=args.dry_run)
