@@ -1,8 +1,12 @@
 from merlin.iterate_files import iterate_files
 
 
-def main(args):
-    """Main entry point."""
+def main(args) -> None:
+    """Main entry point.
+
+    Args:
+        args: Command line arguments.
+    """
 
     signature = "def auto_tests(code: str) -> str:"
     description = (

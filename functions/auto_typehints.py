@@ -7,7 +7,10 @@ def main(args):
     signature = "def auto_typehints(code: str) -> str:"
     description = (
         "Returns the entire code with missing and or corrected typehints."
-        "Only modifies docstrings that are missing or incorrect."
+        "First it tests to see if there are any missing or incorrect typehints."
+        "If this is true then it will only add or modify the incorrect, or "
+        "missing typehints. If there are no missing or incorrect typehints."
+        " The rest of the code will be returned as is."
     )
 
     return iterate_files(args.files, signature, ["None"], description, dry_run=args.dry_run)
