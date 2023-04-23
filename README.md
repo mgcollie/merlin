@@ -12,6 +12,9 @@ Built in Python and powered by ChatGPT, Merlin is a mystical Python code wizard 
 programming by automating essential tasks in your Python files. Prepare to be enchanted as Merlin weaves its spells to 
 generate docstrings, unit tests, and type hints - all with a flick of its metaphorical wand!
 
+Simply run Merlin in the root of your Python project and it will automatically scan your project for Python files, and 
+then generate docstrings, unit tests, and type hints for all of your functions and classes!
+
 ## Requirements
 Before using Merlin, you'll need to ensure that your system meets the following prerequisites:
 
@@ -80,6 +83,9 @@ docker build -t merlin .
 ```
 
 2. Run the container:
+This will mount the current directory as a volume in the container, so that Merlin can access your Python files.
+Merlin will then go and automatically generate any missing dosctrings, type hints, and unit tests for any python files
+that it finds in or under the current working directory.
 ```bash
 docker run --rm -v $(pwd):/app merlin
 ```
@@ -107,6 +113,9 @@ pip install -r requirements.txt
 ```
 
 4. Run Merlin
+This will mount the current directory as a volume in the container, so that Merlin can access your Python files.
+Merlin will then go and automatically generate any missing dosctrings, type hints, and unit tests for any python files
+that it finds in or under the current working directory.
 ```bash
 python merlin.py
 ```
