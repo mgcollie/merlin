@@ -1,7 +1,8 @@
+from argparse import Namespace
 from merlin.iterate_files import iterate_files
 
 
-def main(args) -> None:
+def main(args: Namespace) -> int:
     """Main entry point.
 
     Args:

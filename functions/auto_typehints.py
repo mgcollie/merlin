@@ -1,7 +1,8 @@
+from argparse import Namespace
 from merlin.iterate_files import iterate_files
 
 
-def main(args):
+def main(args: Namespace) -> int:
     """Main entry point."""
 
     signature = "def auto_typehints(code: str) -> str:"
