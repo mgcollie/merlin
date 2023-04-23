@@ -55,7 +55,7 @@ def call_ai_function(function: str, args: List[Any], description: str) -> str:
     return call_openai(messages=messages, temperature=0)
 
 
-def call_openai(messages: List[Message], temperature: float = 0.0, max_tokens:  Optional[int] = None) -> str:
+def call_openai(messages: List[Message], temperature: float = 0.0, max_tokens: Optional[int] = None) -> str:
     """Call the OpenAI API with the provided messages and parameters.
 
     Args:
