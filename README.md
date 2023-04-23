@@ -83,6 +83,7 @@ docker build -t merlin .
 ```
 
 2. Run the container:
+
 This will mount the current directory as a volume in the container, so that Merlin can access your Python files.
 Merlin will then go and automatically generate any missing dosctrings, type hints, and unit tests for any python files
 that it finds in or under the current working directory.
@@ -113,7 +114,7 @@ pip install -r requirements.txt
 ```
 
 4. Run Merlin
-This will mount the current directory as a volume in the container, so that Merlin can access your Python files.
+
 Merlin will then go and automatically generate any missing dosctrings, type hints, and unit tests for any python files
 that it finds in or under the current working directory.
 ```bash
