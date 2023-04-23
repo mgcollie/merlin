@@ -1,10 +1,10 @@
 import logging
 import os
 from merlin.call_ai_function import call_ai_function
-from typing import List
+from typing import List, Any
 
 
-def iterate_files(filenames: List[str], function: str, args: List,
+def iterate_files(filenames: List[str], function: str, args: List[Any],
                   description: str, is_test: bool = False, dry_run: bool = False) -> int:
     """
     Iterates through a list of files, applying a specified function to each file.
@@ -12,7 +12,7 @@ def iterate_files(filenames: List[str], function: str, args: List,
     Args:
         filenames (List[str]): A list of filenames to process.
         function (str): The name of the function to apply to each file.
-        args (List): A list of arguments to pass to the function.
+        args (List[Any]): A list of arguments to pass to the function.
         description (str): A description of the function being applied.
         is_test (bool, optional): If True, appends "_tests" to the output filename. Defaults to False.
         dry_run (bool, optional): If True, does not write the modified code to the file. Defaults to False.
