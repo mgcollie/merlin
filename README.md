@@ -16,7 +16,7 @@ Simply run Merlin in the root of your Python project and it will automatically s
 then generate docstrings, unit tests, and type hints for all of your functions and classes!
 
 ## Requirements
-Before using Merlin, you'll need to ensure that your system meets the following prerequisites:
+> ⚠️ Before using Merlin, you'll need to ensure that your system meets the following prerequisites:
 
 ### Obtaining an OpenAI API Key and Creating a .env File
 Merlin utilizes OpenAI's API to enhance its functionality. To access OpenAI's services, you will need an API key. 
@@ -37,7 +37,7 @@ including your OpenAI API key.
 Open the .env file in a text editor and add the following line, replacing <your_api_key> with the API key you obtained 
 from OpenAI:
 
-```bash
+```
 OPENAI_API_KEY=<your_api_key>
 ```
 
@@ -53,7 +53,7 @@ operating system.
 
 Verify your Python installation by opening a terminal (or command prompt) and running the following command:
 
-```bash
+```
 python --version
 ```
 This should display your installed Python version. Make sure it is 3.7 or higher.
@@ -78,7 +78,7 @@ consult the [Docker documentation](https://docs.docker.com/).
 
 1. Build the Docker image:
 
-```bash
+```
 docker build -t merlin .
 ```
 
@@ -87,29 +87,29 @@ docker build -t merlin .
 This will mount the current directory as a volume in the container, so that Merlin can access your Python files.
 Merlin will then go and automatically generate any missing dosctrings, type hints, and unit tests for any python files
 that it finds in or under the current working directory.
-```bash
+```
 docker run --rm -v $(pwd):/app merlin
 ```
 
 ### Option 2: Virtualenv
 
 1. Create a virtual environment:
-```bash
+```
 python -m venv venv
 ```
 
 2. Activate the virtual environment:
 - On Linux or macOS
-```bash
+```
 source /venv/bin/activate
 ```
 - On Windows
-```bash
+```
 .\venv\Scripts\activate
 ```
 
 3. Install the required packages:
-```bash
+```
 pip install -r requirements.txt
 ```
 
@@ -117,7 +117,7 @@ pip install -r requirements.txt
 
 Merlin will then go and automatically generate any missing dosctrings, type hints, and unit tests for any python files
 that it finds in or under the current working directory.
-```bash
+```
 python merlin.py
 ```
 
