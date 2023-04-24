@@ -72,5 +72,5 @@ def call_openai(messages: List[Message], temperature: float = 0.0, max_tokens: O
         temperature=temperature,
         max_tokens=max_tokens,
     )
-    text = response.choices[0].message.content.strip()
+    text = response.choices[0].message.content.lstrip()
     return remove_python_markdown_formatting(text)
