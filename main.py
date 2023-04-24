@@ -7,7 +7,6 @@ import functions.auto_docstrings
 import functions.auto_tests
 import functions.auto_typehints
 
-
 __doc__ = """
 A program to run specific tasks on a set of python files. Supported tasks include generating
 docstrings, generating unit tests, and adding type hints.
@@ -83,14 +82,14 @@ def main() -> int:
     try:
         # Execute the appropriate task
         if args.task == "all":
-            for task_function in task_mapping.values():
-                print(f"Executing {task_function.__name__}...")
+            for k, v, in task_mapping.items():
+                print(f"Executing {k}...")
                 try:
-                    task_function(args)
+                    v(args)
                 except Exception as e:
                     raise e
         elif args.task:
-            print(f"Executing {task_mapping[args.task].__name__}...")
+            print(f"Executing {args.task}...")
             return task_mapping[args.task](args)
 
         return 0
