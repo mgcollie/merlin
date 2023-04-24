@@ -56,7 +56,7 @@ Verify your Python installation by opening a terminal (or command prompt) and ru
 ```bash
 python --version
 ```
-This should display your installed Python version. Make sure it is 3.6 or higher.
+This should display your installed Python version. Make sure it is 3.7 or higher.
 
 
 ### Docker
