@@ -47,7 +47,7 @@ Now, Merlin will automatically use your OpenAI API key when making requests to t
 file secure and avoid committing it to version control systems, as it contains sensitive information.
 
 ### Python
-> ⚠️Python 3.6 or higher is required for Merlin. If you do not have Python installed or need to update it, visit the 
+> ⚠️Python 3.7 or higher is required for Merlin. If you do not have Python installed or need to update it, visit the 
 [official Python website](https://www.python.org/downloads/) to download and install the appropriate version for your 
 operating system.
 
