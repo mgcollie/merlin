@@ -2,6 +2,7 @@ import logging
 import os
 from merlin.call_ai_function import call_ai_function
 from typing import List, Any
+from pprint import pformat
 
 
 def iterate_files(filenames: List[str], function: str, args: List[Any],
@@ -36,7 +37,7 @@ def iterate_files(filenames: List[str], function: str, args: List[Any],
                 with open(output_filename, 'wb') as f:
                     f.write(modified)
             else:
-                logging.info(modified)
+                logging.info(pformat(modified.decode('utf-8')))
 
         except (FileNotFoundError, IsADirectoryError) as e:
             logging.error(f"File not found: {filename}")
